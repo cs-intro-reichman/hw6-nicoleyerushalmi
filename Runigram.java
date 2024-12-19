@@ -86,7 +86,7 @@ public class Runigram {
 		Color[][] new_image = new Color[image.length][image[0].length];
 		for(int i = 0; i< image.length; i++){
 			for(int j = 0; j<image[i].length; j++){
-				new_image[i][image.length[0] - 1 - j] = image[i][j];
+				new_image[i][image[i].length - 1 - j] = image[i][j];
 			}
 		}
 		return new_image;
@@ -123,7 +123,7 @@ public class Runigram {
 		//// Replace the following statement with your code
 		Color[][] new_color = new Color[image.length][image[0].length];
 		for(int i = 0; i< image.length; i++){
-			for(int j = 0; j< image[0].length; j++){
+			for(int j = 0; j< image[i].length; j++){
 				if (image[i][j] != null){
 				new_color[i][j] = luminance(image[i][j]);}
 			}
