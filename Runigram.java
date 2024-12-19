@@ -121,7 +121,7 @@ public class Runigram {
 	 */
 	public static Color[][] grayScaled(Color[][] image) {
 		//// Replace the following statement with your code
-		Color[][] new_color = new Color[image.length][image.length];
+		Color[][] new_color = new Color[image.length][image[0].length];
 		for(int i = 0; i< image.length; i++){
 			for(int j = 0; j< image[0].length; j++){
 				if (image[i][j] != null){
