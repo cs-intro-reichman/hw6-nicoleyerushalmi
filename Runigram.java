@@ -142,8 +142,8 @@ public class Runigram {
 		int h1 = image[0].length;
 		for(int i = 0; i< width; i++){
 			for(int j = 0; j< height; j++){
-				int x = (int)(i * w1/width);
-				int y =(int)(j * h1/height);
+				int x = Math.min((int) ((i / (double) height) * h1), h1 - 1);
+            	int y = Math.min((int) ((j / (double) width) * w1), w1 - 1);
 				scaledImage[i][j] = image[x][y];
 			}
 		}
@@ -161,6 +161,10 @@ public class Runigram {
 		int nred = (int)((c1.getRed() * alpha) + (c2.getRed() * (1-alpha)));
 		int nblue = (int)((c1.getBlue() * alpha) + (c2.getBlue() * (1-alpha)));
 		int ngreen = (int)((c1.getGreen() * alpha) + (c2.getGreen() * (1-alpha)));
+		// look at new color
+		nred = Math.min(255, Math.max(0, nred));
+    	ngreen = Math.min(255, Math.max(0, ngreen));
+    	nblue = Math.min(255, Math.max(0, nblue));
 		Color newblend = new Color(nred, ngreen, nblue);
 		return newblend;
 	}
@@ -208,7 +212,7 @@ public class Runigram {
 			}
 		}
 		for(int i = 0; i < n; i++){
-			double newn = i/(n - 1);
+			double newn = i/(double)(n - 1);
 			BlendImage = blend(BlendImage ,target, newn);
 			Runigram.display(BlendImage);
 			StdDraw.pause(500);
