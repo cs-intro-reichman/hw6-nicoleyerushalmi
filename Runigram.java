@@ -200,7 +200,7 @@ public class Runigram {
 				target = scaled(target, target.length, source[0].length);
 			}
 		}
-		// morph the image
+		// morph the image.
 		Color[][] BlendImage = new Color[source.length][source[0].length];
 		for (int i = 0; i < source.length; i++) {
 			for (int j = 0; j < source[0].length; j++) {
