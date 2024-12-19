@@ -1,5 +1,5 @@
 import java.awt.Color;
-import java.awt.Color;
+//import java.awt.Color;
 
 /** A library of image processing functions. */
 public class Runigram {
@@ -69,10 +69,11 @@ public class Runigram {
 	private static void print(Color[][] image) {
 		//// Replace this comment with your code
 		for(int i =0; i < image.length; i++){
-			for(int j =0; j< image[i].length; j++){
+			for(int j =0; j< image[0].length; j++){
 				if (image[i][j] != null){
 					print(image[i][j]);
 					}
+				System.out.println();
 			}
 		}
 		//// Notice that all you have to so is print every element (i,j) of the array using the print(Color) function.
