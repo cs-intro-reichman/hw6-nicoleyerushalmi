@@ -142,8 +142,8 @@ public class Runigram {
 		int w1 = image[0].length;
 		for(int i = 0; i< width; i++){
 			for(int j = 0; j< height; j++){
-				int x = Math.min((int) ((i / (double) height) * h1), h1 - 1);
-            	int y = Math.min((int) ((j / (double) width) * w1), w1 - 1);
+				int x = (int) ((i / (double) height) * h1);
+				int y = (int) ((j / (double) width) * w1); 
 				scaledImage[i][j] = image[x][y];
 			}
 		}
