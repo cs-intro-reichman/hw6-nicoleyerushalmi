@@ -86,7 +86,7 @@ public class Runigram {
 		Color[][] new_image = new Color[image.length][image[0].length];
 		for(int i = 0; i< image.length; i++){
 			for(int j = 0; j<image[i].length; j++){
-				new_image[image.length - 1 - i][j] = image[i][j];
+				new_image[i][image.length[0] - 1 - j] = image[i][j];
 			}
 		}
 		return new_image;
@@ -100,7 +100,7 @@ public class Runigram {
 		Color[][] new_image = new Color[image.length][image[0].length];
 		for(int i = 0; i< image.length; i++){
 			for(int j = 0; j<image[i].length; j++){
-				new_image[i][image.length - 1 - j] = image[i][j];
+				new_image[image.length - 1 - i][j] = image[i][j];
 			}
 		}
 		return new_image;
@@ -203,9 +203,10 @@ public class Runigram {
 		// morph the image
 		Color[][] BlendImage = source;
 		for(int i = 0; i < n; i++){
-			BlendImage = blend(BlendImage ,target, (n - i)/n);
+			double newn = i/n;
+			BlendImage = blend(BlendImage ,target, newn);
 			Runigram.display(BlendImage);
-			StdDraw.pause(5000);
+			StdDraw.pause(500);
 		}
 			
 		}
